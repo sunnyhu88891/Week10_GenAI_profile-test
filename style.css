@@ -1,0 +1,176 @@
+:root {
+  --milk: #fffbf3;
+  --grid: #e4eef8;
+  --cocoa: #5a4a4f;
+  --rose: #b8466f;
+  --pink: #ffd9e3;
+  --butter: #fff0b8;
+  --sky: #d6ebff;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  min-height: 100vh;
+  padding: clamp(3rem, 7vh, 5rem) 1.5rem 4rem;
+  background-color: var(--milk);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: var(--cocoa);
+  font-family: "Gowun Dodum", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  line-height: 1.75;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.identity,
+main {
+  width: 100%;
+  max-width: 28rem;
+  margin-inline: auto;
+}
+
+.identity { position: relative; }
+
+.polaroid {
+  position: relative;
+  width: min(100%, 19rem);
+  margin-inline: auto;
+  padding: 0.875rem 0.875rem 1.25rem;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 10px 24px rgb(184 70 111 / 0.14);
+  transform: rotate(-2.5deg);
+}
+
+/* 마스킹 테이프 */
+.polaroid::before {
+  content: "";
+  position: absolute;
+  top: -0.875rem;
+  left: 50%;
+  width: 6.5rem;
+  height: 1.75rem;
+  background: repeating-linear-gradient(
+    45deg,
+    rgb(255 217 227 / 0.9) 0 8px,
+    rgb(255 240 184 / 0.9) 8px 16px
+  );
+  transform: translateX(-50%) rotate(3deg);
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--pink);
+}
+
+h1,
+h2 { font-family: "Gaegu", "Gowun Dodum", cursive; }
+
+h1 {
+  margin-top: 0.75rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.role { font-size: 0.9375rem; }
+
+.sticker {
+  position: absolute;
+  color: var(--rose);
+  line-height: 1;
+}
+
+.heart {
+  top: 1.25rem;
+  right: -1.125rem;
+  color: #f48fb1;
+  font-size: 2.5rem;
+  transform: rotate(14deg);
+}
+
+.star {
+  bottom: 4rem;
+  left: -1.125rem;
+  color: #f2b705;
+  font-size: 2rem;
+}
+
+main { margin-top: clamp(3rem, 7vh, 4rem); }
+
+section + section { margin-top: 3rem; }
+
+h2 {
+  width: fit-content;
+  margin: 0 auto 1rem;
+  padding-inline: 0.5rem;
+  background: linear-gradient(transparent 58%, var(--butter) 58%);
+  color: var(--rose);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.bio { font-size: 1.0625rem; }
+
+/* 대화 말풍선 */
+.interests {
+  display: grid;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.interests > div {
+  width: fit-content;
+  max-width: 90%;
+  padding: 0.75rem 1.125rem;
+  border-radius: 1.5rem 1.5rem 1.5rem 0.375rem;
+  background: var(--pink);
+}
+
+.interests > div:nth-child(2) {
+  justify-self: end;
+  border-radius: 1.5rem 1.5rem 0.375rem 1.5rem;
+  background: var(--sky);
+}
+
+.interests > div:nth-child(3) { background: var(--butter); }
+
+dt { font-weight: 700; }
+
+dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.email {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.625rem 1.5rem;
+  border-radius: 999px;
+  background: var(--pink);
+  box-shadow: 0 4px 0 #f4b3c6;
+  color: var(--cocoa);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.email:hover { background: #ffcbd9; }
+
+.email:active {
+  box-shadow: none;
+  transform: translateY(4px);
+}
+
+.email:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 3px;
+}
