@@ -174,3 +174,36 @@ dd {
   outline: 3px solid var(--rose);
   outline-offset: 3px;
 }
+
+/* 데스크톱: 왼쪽 사진, 오른쪽 내용 */
+@media (min-width: 900px) {
+  body {
+    display: grid;
+    grid-template-columns: minmax(0, 24rem) minmax(0, 30rem);
+    justify-content: center;
+    align-items: center;
+    column-gap: clamp(3rem, 7vw, 6rem);
+    padding: 1.5rem 2rem;
+    text-align: left;
+  }
+
+  .identity,
+  main { margin: 0; }
+
+  .polaroid {
+    width: min(100%, 21rem);
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  section + section { margin-top: 1.5rem; }
+
+  h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .interests { gap: 0.5rem; }
+
+  .interests > div { padding: 0.5rem 1.125rem; }
+}
